@@ -1,5 +1,5 @@
 package com.coderscampus.Assignment9.domain;
-//POJO
+//POJO, will hold data parsed from 'recipes.txt'
 public class Recipe {
 	private Integer cookingMinutes;
 	private Boolean dairyFree;
