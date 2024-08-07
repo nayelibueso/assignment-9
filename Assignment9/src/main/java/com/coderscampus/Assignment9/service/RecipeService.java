@@ -23,7 +23,7 @@ public class RecipeService {
 
 	public void loadRecipes() throws IOException {
 		Reader in = new FileReader("recipes.txt");
-		Iterable<CSVRecord> records = CSVFormat.DEFAULT.withIgnoreSurroundingSpaces().withHeader().parse(in);
+		Iterable<CSVRecord> records = CSVFormat.DEFAULT.withIgnoreSurroundingSpaces().withHeader().withEscape('\\').parse(in);
 		for (CSVRecord record : records) {
 			Recipe recipe = new Recipe();
 			recipe.setCookingMinutes(Integer.parseInt(record.get(0))); //Setting each fields for the 'Recipe' class
