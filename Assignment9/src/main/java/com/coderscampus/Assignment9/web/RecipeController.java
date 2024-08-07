@@ -1,7 +1,11 @@
 package com.coderscampus.Assignment9.web;
+
+import org.springframework.web.bind.annotation.RestController;
+
 //Acts as the interface between the user (front end) and the service layer (RecipeService)
 //Maps HTTP request (GET Requests) to specific methods 
 //Calls the 'RecipeService' to get the data and returns it as a response 
+@RestController
 public class RecipeController {
 
 //	/gluten-free returns gluten-free recipes.
