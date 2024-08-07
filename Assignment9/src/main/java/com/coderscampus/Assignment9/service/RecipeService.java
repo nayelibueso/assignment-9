@@ -14,10 +14,8 @@ import org.springframework.stereotype.Service;
 
 import com.coderscampus.Assignment9.domain.Recipe;
 
-//Will be loading and parsing the 'recipes.txt' using Apache commons CSVS
-//Storing parsed data into a collection
-//Providing methods to filter the recipes based on specific criteria
-@Service // Service class that handles the buisnuess logic of this class
+
+@Service 
 public class RecipeService {
 	private List<Recipe> recipes = new ArrayList<>();
 
@@ -26,7 +24,7 @@ public class RecipeService {
 		Iterable<CSVRecord> records = CSVFormat.DEFAULT.withIgnoreSurroundingSpaces().withHeader().withEscape('\\').parse(in);
 		for (CSVRecord record : records) {
 			Recipe recipe = new Recipe();
-			recipe.setCookingMinutes(Integer.parseInt(record.get(0))); //Setting each fields for the 'Recipe' class
+			recipe.setCookingMinutes(Integer.parseInt(record.get(0))); 
 			recipe.setDairyFree(Boolean.parseBoolean(record.get(1)));
 			recipe.setGlutenFree(Boolean.parseBoolean(record.get(2)));
 			recipe.setInstructions(record.get(3));
